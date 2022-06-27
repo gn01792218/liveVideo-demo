@@ -1,0 +1,15 @@
+syntax = "proto3";
+package auth;
+option go_package = "baccarat-game-server/protobufs/auth";
+
+import "foundation/header.proto";
+
+message UserInfo {
+  foundation.Header header = 1;
+  User user = 2;
+}
+
+message User {
+  string name = 1;
+  double wallet = 2;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package foundation;
+option go_package = "baccarat-game-server/protobufs/foundation";
+
+import "foundation/header.proto";
+
+message HeartbeatPing {
+  foundation.Header header = 1;
+}
+
+message HeartbeatPong {
+  foundation.Header header = 1;
+}

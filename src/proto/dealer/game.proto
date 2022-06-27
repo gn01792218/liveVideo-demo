@@ -1,0 +1,25 @@
+syntax = "proto3";
+package dealer;
+option go_package = "baccarat-game-server/protobufs/dealer";
+
+import "foundation/header.proto";
+
+enum Result {
+  Default = 0;
+  Banker = 1;
+  Player = 2;
+  BankerPair = 3;
+  Tie = 4;
+  PlayerPair = 5;
+}
+
+message GameResult {
+  foundation.Header header = 1;
+  repeated Result results = 2;
+  double totalWin = 3;
+}
+
+message GameStatus {
+  foundation.Header header = 1;
+  bool isGaming = 2;
+}

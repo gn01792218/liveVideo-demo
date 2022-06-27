@@ -1,0 +1,65 @@
+syntax = "proto3";
+package bet;
+option go_package = "baccarat-game-server/protobufs/bet";
+
+import "foundation/header.proto";
+
+enum Error {
+    ErrorDefault = 0;
+    BetTimeNotInvlid = 1;
+    BetIndexInvalid = 2;
+    BetAreaInvalid = 3;
+    ReachMaxLimit = 4;
+    RoundNotFound = 5;
+    NoEnoughWallet = 6;
+}
+
+enum BetArea {
+    BetAreaDefault = 0;
+    Player = 1;
+    Banker = 2;
+    PlayerPair = 3;
+    Tie = 4;
+    BankerPair = 5;
+}
+
+message BetStatus {
+    double Banker = 1;
+    double Player = 2;
+    double BankerPair = 3;
+    double Tie = 4;
+    double PlayerPair = 5;
+}
+
+message BetCall {
+    foundation.Header header = 1;
+    string gameUuid = 2;
+    int32 betIndex = 3;
+    BetArea betArea = 4;
+}
+
+message BetRecall {
+    foundation.Header header = 1;
+    int32 result = 2; // 1 success, -1 failed ro error
+    double totalBets = 3;
+    BetStatus betStatus = 4;
+    BetError betError = 5;
+}
+
+message BetResetCall {
+    foundation.Header header = 1;
+    string gameUuid = 2;
+}
+
+message BetResetRecall {
+    foundation.Header header = 1;
+    int32 result = 2; // 1 success, -1 failed ro error
+    double totalBets = 3;
+    BetStatus betStatus = 4;
+}
+
+message BetError {
+    foundation.Header header = 1;
+    Error error = 2;
+    string errorMessage = 3;
+}

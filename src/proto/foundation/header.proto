@@ -1,0 +1,9 @@
+syntax = "proto3";
+package foundation;
+option go_package = "baccarat-game-server/protobufs/foundation";
+
+import "route/routes.proto";
+
+message Header {
+  route.URI uri = 1;
+}

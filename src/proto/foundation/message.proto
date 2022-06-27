@@ -1,0 +1,9 @@
+syntax = "proto3";
+package foundation;
+option go_package = "baccarat-game-server/protobufs/foundation";
+
+import "foundation/header.proto";
+
+message Message {
+  foundation.Header header = 1;
+}

@@ -1,4 +1,7 @@
 import { createStore } from 'vuex'
+import lobby from './lobby'
+import auth from './auth'
+import table from './table'
 
 export default createStore({
   state: {
@@ -8,5 +11,6 @@ export default createStore({
   actions: {
   },
   modules: {
+    lobby,auth,table,
   }
 })

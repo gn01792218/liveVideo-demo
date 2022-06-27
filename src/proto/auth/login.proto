@@ -1,0 +1,15 @@
+syntax = "proto3";
+package auth;
+option go_package = "baccarat-game-server/protobufs/auth";
+
+import "foundation/header.proto";
+
+message LoginCall {
+    foundation.Header header = 1;
+    string token = 2;
+}
+
+message LoginRecall {
+    foundation.Header header = 1;
+    int32 status = 2;
+}

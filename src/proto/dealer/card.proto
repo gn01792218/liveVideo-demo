@@ -1,0 +1,16 @@
+syntax = "proto3";
+package dealer;
+option go_package = "baccarat-game-server/protobufs/dealer";
+
+enum Suit {
+    Default = 0;
+    Heart = 1;
+    Diamond = 2;
+    Spade = 3;
+    Club = 4;
+}
+
+message Card {
+    Suit suit = 1;
+    int32 point = 2;
+}

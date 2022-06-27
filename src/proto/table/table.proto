@@ -1,0 +1,30 @@
+syntax = "proto3";
+package table;
+option go_package = "baccarat-game-server/protobufs/table";
+
+import "foundation/header.proto";
+
+message Table {
+    BetStatus betStatus = 1;
+    string streamingUrl = 2;
+}
+
+message TableJoinCall {
+    foundation.Header header = 1;
+    string uuid = 2;
+}
+
+message TableJoinRecall {
+    foundation.Header header = 1;
+    Table table = 2;
+}
+
+message BetStatus {
+    string Banker = 1;
+    string Player = 2;
+    string Tie = 3;
+    string BankerPair = 4;
+    string PlayerPair = 5;
+    string BankerNatural = 6;
+    string PlayerNatural = 7;
+}

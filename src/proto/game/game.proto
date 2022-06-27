@@ -1,0 +1,36 @@
+syntax = "proto3";
+package game;
+option go_package = "baccarat-game-server/protobufs/game";
+
+import "foundation/header.proto";
+import "dealer/dealer.proto";
+
+enum Status {
+  default = 0;
+  beting = 1;
+  drawing = 2;
+  waiting = 3;
+}
+
+message BetRoundStart {
+  foundation.Header header = 1;
+  string game_uuid = 2;
+  int32 time_remain = 3;
+}
+
+message BetRoundCountdown {
+  foundation.Header header = 1;
+  int32 time_remain = 2;
+}
+
+message BetRoundEnd {
+  foundation.Header header = 1;
+  string game_uuid = 2;
+}
+
+message GameStatus {
+  foundation.Header header = 1;
+  Status status = 2;
+  int32 time_remain = 3;
+  repeated dealer.Draw draws = 4;
+}

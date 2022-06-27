@@ -1,0 +1,24 @@
+syntax = "proto3";
+package roadmap;
+option go_package = "baccarat-game-server/protobufs/roadmap";
+
+import "foundation/header.proto";
+import "roadmap/block.proto";
+
+message Column {
+  repeated Block blocks = 1;
+}
+
+message BeadPlate {
+  repeated Block blocks = 1;
+}
+
+message BigRoad {
+  repeated Column columns = 1;
+}
+
+message Roadmap {
+  foundation.Header header = 1;
+  BeadPlate beadPlate = 2;
+  BigRoad bigRoad = 3;
+}

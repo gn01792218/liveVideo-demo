@@ -1,0 +1,15 @@
+syntax = "proto3";
+package lobby;
+option go_package = "baccarat-game-server/protobufs/lobby";
+
+import "foundation/header.proto";
+
+message LobbyInfo {
+    foundation.Header header = 1;
+    repeated TableInfo tables = 2;
+}
+
+message TableInfo {
+    string uuid = 1;
+    string name = 2;
+}

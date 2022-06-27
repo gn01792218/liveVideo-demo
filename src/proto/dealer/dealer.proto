@@ -1,0 +1,43 @@
+syntax = "proto3";
+package dealer;
+option go_package = "baccarat-game-server/protobufs/dealer";
+
+import "foundation/header.proto";
+import "dealer/card.proto";
+
+enum Side {
+    SideDefault = 0;
+    Banker = 1;
+    Player = 2;
+}
+
+message Draw {
+    foundation.Header header = 1;
+    Side side = 2;
+    int32 position = 3;
+    Card card = 4;
+}
+
+message RoundStartCall {
+  foundation.Header header = 1;
+}
+
+message RoundEndCall {
+  foundation.Header header = 1;
+}
+
+message RoundStartRecall {
+  foundation.Header header = 1;
+  int32 status = 2;
+  string message = 3;
+}
+
+message RoundEndRecall {
+  foundation.Header header = 1;
+  int32 status = 2;
+  string message = 3;
+}
+
+message BroadcastDealerRoundEnd {
+  foundation.Header header = 1;
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package roadmap;
+option go_package = "baccarat-game-server/protobufs/roadmap";
+
+enum Block {
+  BlockDefault = 0;
+  Banker = 1;
+  Player = 2;
+  Tie = 3;
+  BankerAndBankerPair = 4;
+  BankerAndPlayerPair = 5;
+  BankerAndBothPair = 6;
+  PlayerAndBankerPair = 7;
+  PlayerAndPlayerPair = 8;
+  PlayerAndBothPair = 9;
+  TieAndBankerPair = 10;
+  TieAndPlayerPair = 11;
+  TieAndBothPair = 12;
+  BankerAndTie = 13;
+  BankerAndBankerPairAndTie = 14;
+  BankerAndPlayerPairAndTie = 15;
+  BankerAndBothPairAndTie = 16;
+  PlayerAndTie = 17;
+  PlayerAndBankerPairAndTie = 18;
+  PlayerAndPlayerPairAndTie = 19;
+  PlayerAndBothPairAndTie = 20;
+}

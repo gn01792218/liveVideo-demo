@@ -1,0 +1,34 @@
+syntax = "proto3";
+package route;
+option go_package = "baccarat-game-server/protobufs/route";
+
+enum URI {
+  Default               = 0;
+  LoginCall             = 1;
+  LoginRecall           = 2;
+  LobbyInfo             = 3;
+  UserInfo              = 4;
+  TableJoinCall         = 5;
+  TableJoinRecall       = 6;
+  BetCall               = 7;
+  BetRecall             = 8;
+  BetResetCall          = 9;
+  BetResetRecall        = 10;
+  Draw                  = 11;
+  DealerGameResult      = 12;
+  BroadcastGameResult   = 13;
+  BetRoundStart         = 14;
+  BetRoundEnd           = 15;
+  BetRoundCountdown     = 16;
+  HeartbeatPing         = 17;
+  HeartbeatPong         = 18;
+  DealerRoundStartCall  = 19;
+  DealerRoundStartRecall = 20;
+  DealerRoundEndCall     = 21;
+  DealerRoundEndRecall   = 22;
+  BroadcastDealerRoundEnd = 220;
+  BetError              = 23;
+  GameStatus            = 24;
+  DealerGameStatus      = 25;
+  Roadmap               = 26;
+}
