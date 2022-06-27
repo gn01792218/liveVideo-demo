@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "proto": "pbjs -t static-module -w es6 -o src/assets/js/bundle.js src/proto/*/*.proto",
     "protots": "pbjs -t static-module src/proto/*/*.proto | pbts -o src/assets/js/bundle.d.ts -",
-    "deploy-github":"npm run build && node ./deploy/ghpages.js"
+    "deploy-ghpage":"npm run build && node ./deploy/ghpages.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
