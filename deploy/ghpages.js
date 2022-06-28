@@ -3,7 +3,7 @@ const ghpages = require('gh-pages');
 
 const options = {
     branch: 'gh-pages',
-    repo: 'https://github.com/gn01792218/liveVideo-demo.git' // project github repo
+    repo: 'https://github.com/ebrainzone/live-video-demo.git' // project github repo
 };
 
 const callback = err => {
